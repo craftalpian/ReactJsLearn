@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 .TestBox {
     background-color: red;
     height: 50px;
@@ -13,6 +14,32 @@
     background-color: blue;
 }
 
-.container-fluid {
-    background-color: #FFFFFF;
+.navbar-nav {
+    padding-left: 0px !important;
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.navbar-brand {
+    color: #212831 !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+ul li a {
+    color: #212831 !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 42px;
+}
+
+ul li a.active {
+    color: #212831 !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
 }
