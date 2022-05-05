@@ -1,3 +1,18 @@
-.App {
+.TestBox {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+}
+
+.NavigationBarParent {
+    align-self: center;
+}
+
+.NavigationCustom {
+    width: 90%;
+    background-color: blue;
+}
+
+.container-fluid {
     background-color: #FFFFFF;
 }
