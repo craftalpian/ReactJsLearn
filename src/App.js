@@ -2,6 +2,10 @@ import './App.css';
 import { ReactComponent as SearchIcon } from './assets/images/SearchIcon.svg';
 import styled from 'styled-components';
 
+const Body = styled.body`
+  background-color: #F5F9FF;
+`
+
 const NavigationBar = styled.section`
   overflow: hidden;
   display: flex;
@@ -17,7 +21,6 @@ const BrandText = styled.h1`
   font-style: normal;
   font-weight: 600;
   font-size: 28px;
-  line-height: 34px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -48,12 +51,63 @@ const MenuText = styled.li`
   font-family: 'Inter';
   font-style: normal;
   font-size: 16px;
-  line-height: 19px;
   text-align: center;
 
   &:hover ${MenuTextHref}{
     color: #434b58 !important;
   }
+`
+
+const ContentBody = styled.section`
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: pink;
+`
+
+const LeftContent = styled.div`
+  overflow: hidden;
+  width: 100%;
+  background-color: red;
+
+  h1{
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 86px;
+    /* or 123% */
+
+    letter-spacing: 0.01em;
+
+    color: #212831;
+  }
+
+  p{
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* or 162% */
+
+
+    color: #535E70; 
+  }
+`
+
+const CTAButton = styled.button`
+  height: 58px;
+  overflow: hidden;
+`
+
+const RightContent = styled.div`
+  overflow: hidden;
+  width: 100%;
+  background-color: green;
 `
 
 const MenuTextAtom = (props) => <MenuText><MenuTextHref href='#' {...props}>{props.children}</MenuTextHref></MenuText>;
@@ -69,11 +123,20 @@ const MenuComponent = () => (
 
 function App() {
   return (
-    <NavigationBar className='container mt-4'>
-      <BrandText>M Group</BrandText>
-      <MenuComponent></MenuComponent>
-      <SearchIcon width={23} height={23}></SearchIcon>
-    </NavigationBar>
+    <Body className='container-fluid'>
+      <NavigationBar className='container mt-4'>
+        <BrandText>M Group</BrandText>
+        <MenuComponent></MenuComponent>
+        <SearchIcon width={23} height={23}></SearchIcon>
+      </NavigationBar>
+      <ContentBody className='container mt-5'>
+        <LeftContent>
+          <h1>Architects <br />with different approach</h1>
+          <p className='mt-4'>Find your home very easily by using our real estate platform. We makes home finding so easy and flexible.</p>
+        </LeftContent>
+        <RightContent></RightContent>
+      </ContentBody>
+    </Body>
   )
 }
 
