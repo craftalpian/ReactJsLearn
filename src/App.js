@@ -30,6 +30,14 @@ const MenuList = styled.ul`
   margin: auto;
   padding-left: 0;
   overflow: hidden;
+  text-align: center;
+`
+
+const MenuTextHref = styled.a`
+  font-weight: ${props => props.active ? 600 : 400};
+  color: ${props => props.active ? '#212831' : '#535e70'};
+  text-decoration: none;
+  margin-right: 0;
 `
 
 const MenuText = styled.li`
@@ -42,14 +50,9 @@ const MenuText = styled.li`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-`
 
-const MenuTextHref = styled.a`
-  font-weight: ${props => props.active ? 600 : 400};
-  color: ${props => props.active ? '#212831' : '#535e70'};
-  text-decoration: none;
-  &:hover{
-    color: red;
+  &:hover ${MenuTextHref}{
+    color: #434b58 !important;
   }
 `
 
@@ -66,7 +69,7 @@ const MenuComponent = () => (
 
 function App() {
   return (
-    <NavigationBar className='container'>
+    <NavigationBar className='container mt-4'>
       <BrandText>M Group</BrandText>
       <MenuComponent></MenuComponent>
       <SearchIcon width={23} height={23}></SearchIcon>
