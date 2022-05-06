@@ -1,5 +1,7 @@
 import './App.css';
-import {ReactComponent as SearchIcon} from './assets/images/SearchIcon.svg';
+import { ReactComponent as SearchIcon } from './assets/images/SearchIcon.svg';
+import { ReactComponent as SmallRightIcon } from './assets/images/SmallRightIcon.svg';
+import { ReactComponent as SmallPlayIcon } from './assets/images/SmallPlayIcon.svg';
 
 function NavigationBar() {
   return (
@@ -36,10 +38,39 @@ function NavigationBar() {
   )
 }
 
+function Home() {
+  return (
+    <section className="container mt-5 test">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col">
+            <h1 className="Title">Architects with different approach</h1>
+            <h4 className="SubTitle mt-4">Find your home very easily by using our real estate platform. We makes home finding so easy and flexible.</h4>
+            <div className="mt-5">
+
+            <a href="#" className="btn btn-primary">Find A Property<SmallRightIcon height={26} width={26} className="ms-2"></SmallRightIcon></a>
+            <a href="#" className="Secondary btn btn-link ms-3 p-0">
+              <a href="#" className="btn btn-light me-2">
+                <SmallPlayIcon width={14} height={14}></SmallPlayIcon>
+              </a>
+              What's Trending?
+            </a>
+            </div>
+          </div>
+          <div className="col">
+            tostssssa
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function App() {
   return (
-    <div className="container-fluid">
-      <NavigationBar />
+    <div className="container-fluid App">
+      <NavigationBar></NavigationBar>
+      <Home></Home>
     </div>
   );
 }
