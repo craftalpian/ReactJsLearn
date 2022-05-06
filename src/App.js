@@ -1,5 +1,7 @@
 import './App.css';
 import { ReactComponent as SearchIcon } from './assets/images/SearchIcon.svg';
+import { ReactComponent as SmallRightIcon } from './assets/images/SmallRightIcon.svg';
+import { ReactComponent as SmallPlayIcon } from './assets/images/SmallPlayIcon.svg';
 import styled from 'styled-components';
 
 const Body = styled.body`
@@ -54,7 +56,7 @@ const MenuText = styled.li`
   text-align: center;
 
   &:hover ${MenuTextHref}{
-    color: #434b58 !important;
+    color: #343c49 !important;
   }
 `
 
@@ -63,13 +65,11 @@ const ContentBody = styled.section`
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: pink;
 `
 
 const LeftContent = styled.div`
   overflow: hidden;
   width: 100%;
-  background-color: red;
 
   h1{
     text-align: left;
@@ -78,8 +78,6 @@ const LeftContent = styled.div`
     font-weight: 700;
     font-size: 70px;
     line-height: 86px;
-    /* or 123% */
-
     letter-spacing: 0.01em;
 
     color: #212831;
@@ -92,22 +90,111 @@ const LeftContent = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    /* or 162% */
-
 
     color: #535E70; 
   }
 `
 
-const CTAButton = styled.button`
-  height: 58px;
+const ButtonDiv = styled.div`
+  margin-top: 50px;
+  display: flex;
+`
+
+const CTAButton = styled.a`
+  background-color: #195AFF;
+  border-radius: 6px;
+  padding: 0px 27px;
+  text-align: center;
+  display: flex;
+  
+  &:hover{
+    background-color: #1144c5 !important;
+    text-decoration: none;
+  }
+
+  h4{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 21px 10px 21px 0px;
+    margin: 0px;
+
+    color: #FFFFFF;
+  }
+`
+
+const OrangeButton = styled.a`
   overflow: hidden;
+  display: flex;
+  text-decoration: none;
+
+  div{
+    height: 100%;
+    background-color: #FE6543;
+    border-radius: 6px;
+    padding: 0px 22px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  div:hover{
+    background-color: #ea5f40
+  }
+
+  h4{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 21px 10px 21px 0px;
+    margin: 0px;
+
+    color: #113873;
+  }
 `
 
 const RightContent = styled.div`
   overflow: hidden;
   width: 100%;
-  background-color: green;
+  
+  img{
+    width: 346px;
+  }
+`
+
+const MiniProfile = styled.div`
+  display: flex;
+
+  img{
+    width: 72px;
+    height: 72px;
+  }
+`
+
+const NameText = styled.div`
+  h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #212831;
+  }
+
+  p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: #535E70;
+  }
 `
 
 const MenuTextAtom = (props) => <MenuText><MenuTextHref href='#' {...props}>{props.children}</MenuTextHref></MenuText>;
@@ -132,9 +219,26 @@ function App() {
       <ContentBody className='container mt-5'>
         <LeftContent>
           <h1>Architects <br />with different approach</h1>
-          <p className='mt-4'>Find your home very easily by using our real estate platform. We makes home finding so easy and flexible.</p>
+          <p className='mt-4'>Find your home very easily by using our real estate platform.<br />We makes home finding so easy and flexible.</p>
+          <ButtonDiv>
+            <CTAButton href='#'><h4>Find A Property</h4><SmallRightIcon className='align-self-center' height={26} width={26}></SmallRightIcon></CTAButton>
+            <OrangeButton className='ms-4' href='#'>
+              <div>
+                <SmallPlayIcon></SmallPlayIcon>
+              </div>
+              <h4 className='ms-2'>What's Trending?</h4></OrangeButton>
+          </ButtonDiv>
         </LeftContent>
-        <RightContent></RightContent>
+        <RightContent>
+          <img src={require('./assets/images/SampleImages.png')} />
+          <MiniProfile className='mt-5'>
+            <img src={require('./assets/images/SampleJohnLewis.png')} className='me-4' />
+            <NameText>
+              <h3>John Lewis</h3>
+              <p>The real estate <br />agent of M group</p>
+            </NameText>
+          </MiniProfile>
+        </RightContent>
       </ContentBody>
     </Body>
   )
